@@ -1,11 +1,11 @@
 -- ESX Export (new)
 ESX = exports["es_extended"]:getSharedObject() -- From https://documentation.esx-framework.org/tutorials/tutorials-esx/sharedevent/
 
--- Discord Rich Presence (0.0ms)
+-- Discord Rich Presence
 local appId = '' -- https://discord.com/developers/applications
-local largeImageKey = 'Your Logo'
+local largeImageKey = 'Your Logo' -- https://discord.com/developers/applications/xxx/rich-presence/assets
 local largeImageText = 'Your City'
-local smallImageKey = 'Your Logo'
+local smallImageKey = 'Your Logo' -- https://discord.com/developers/applications/xxx/rich-presence/assets
 local smallImageText = 'Your Text'
 
 Citizen.CreateThread(function()
@@ -21,13 +21,9 @@ Citizen.CreateThread(function()
         playerId = GetPlayerServerId(PlayerId())
         details = "Nick: " .. playerName
         state = "ID: " .. playerId
-        SetRichPresence(details .. " | " .. state)
-        Citizen.Wait(60000)
+	Citizen.Wait(60000)
     end
 end)
-
--- Hud Color
-ReplaceHudColourWithRgba(116, 0, 90, 255, 0.1) -- Add your Color its RGBA (keep 116, and 0.1)
 
 -- Remove Bulletproof Helmets
 Citizen.CreateThread(function()
@@ -41,37 +37,30 @@ Citizen.CreateThread(function()
     SetPlayerCanUseCover(PlayerID(), false)
 end)
 
+-- Hud Color
+Citizen.CreateThread(function()
+    ReplaceHudColourWithRgba(116, 255, 135, 0, 255) -- Add your Color its RGBA(RED GREEN BLUE ALPHA, keep 116, and 255)
+end)
+ 
 -- Pausemenu 
 function AddTextEntry(key, value)
 	Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), key, value)
 end
 
 Citizen.CreateThread(function()
-  AddTextEntry('FE_THDR_GTAO', '~o~Your~s~ ~g~City~s~ ~p~|~s~ ~r~We~s~ ~b~are~s~ ~y~Cool~s~')
+  AddTextEntry('FE_THDR_GTAO', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (53)')
+  Citizen.Wait(15000)
 end)
 Citizen.CreateThread(function()
-    AddTextEntry('PM_PANE_CFX', 'Add Your Text in ~r~client.lua~s~')
+    AddTextEntry('PM_PANE_CFX', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (53)')
+    Citizen.Wait(15000)
 end)
 
--- No Weaponpunsh
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(0) -- Stay on 0 or it breaks
-        local ped = GetPlayerPed( -1 )
-        local weapon = GetSelectedPedWeapon(ped)
-        if IsPedArmed(ped, 6) then
-            DisableControlAction(1, 140, true)
-            DisableControlAction(1, 141, true)
-            DisableControlAction(1, 142, true)
-        end
-    end
-end)
-
--- Infinite Stamina 
+-- Infinte Stamina 
 Citizen.CreateThread(function()
     local playerPed, playerId, staminaMultiplier
     while true do
-        Citizen.Wait(500) -- max. 500 can get Lower but will cost Performance!
+        Citizen.Wait(3000)
         playerPed = PlayerPedId()
         playerId = PlayerId()
 
