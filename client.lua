@@ -48,11 +48,11 @@ function AddTextEntry(key, value)
 end
 
 Citizen.CreateThread(function()
-  AddTextEntry('FE_THDR_GTAO', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (53)')
+  AddTextEntry('FE_THDR_GTAO', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (51)')
   Citizen.Wait(15000)
 end)
 Citizen.CreateThread(function()
-    AddTextEntry('PM_PANE_CFX', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (53)')
+    AddTextEntry('PM_PANE_CFX', '~o~Shared by~w~ Nixo0001 ~c~>>~b~ change in client.lua (55)')
     Citizen.Wait(15000)
 end)
 
