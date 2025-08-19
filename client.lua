@@ -2,7 +2,7 @@
 ESX = exports["es_extended"]:getSharedObject() -- From https://documentation.esx-framework.org/tutorials/tutorials-esx/sharedevent/
 
 -- Discord Rich Presence
-local appId = '' -- https://discord.com/developers/applications
+local appId = 'Your Application' -- https://discord.com/developers/applications
 local largeImageKey = 'Your Logo' -- https://discord.com/developers/applications/xxx/rich-presence/assets
 local largeImageText = 'Your City'
 local smallImageKey = 'Your Logo' -- https://discord.com/developers/applications/xxx/rich-presence/assets
